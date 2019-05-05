@@ -11,18 +11,27 @@ Test.assertDeepEquals(towerBuilder(3), ["  *  "," *** ","*****"]);
 
 function towerBuilder(nFloors) {
   // build here
+  let arr = [];
+
   for (let i = 0; i < nFloors; i++) {
     let str = "";
 
-    for (let j = 0; j < nFloors - i; j++) {
+    for (let j = 0; j < nFloors - (i * 2); j++) {
       str = str + " ";
     }
 
     for (let k = 1; k < (2 * i + 2); k++) {
       str = str + "*";
     }
-    console.log(str);
+
+    for (let j = 0; j < nFloors - (i * 2); j++) {
+      str = str + " ";
+    }
+
+    arr.push(str);
   }
+
+  return arr;
 }
 
 console.log(towerBuilder(3));
