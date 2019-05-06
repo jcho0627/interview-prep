@@ -16,7 +16,7 @@ function towerBuilder(nFloors) {
   for (let i = 0; i < nFloors; i++) {
     let str = "";
 
-    for (let j = 0; j < nFloors - (i * 2); j++) {
+    for (let j = 0; j < nFloors - (i + 1); j++) {
       str = str + " ";
     }
 
@@ -24,7 +24,7 @@ function towerBuilder(nFloors) {
       str = str + "*";
     }
 
-    for (let j = 0; j < nFloors - (i * 2); j++) {
+    for (let j = 0; j < nFloors - (i + 1); j++) {
       str = str + " ";
     }
 
