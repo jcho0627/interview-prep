@@ -19,19 +19,21 @@ function array_diff(a, b) {
   } else if (b.length === 0) {
     return b;
   } else {
-    b.forEach(function checkA(check_value) {
-      for (let i = 0; i < a.length; i++) {
-        if (check_value === a[i]) {
-          console.log(a[check_value])
-          // console.log("the same number = " + check_value)
-          return "the same number = " + check_value;
-        }
-      }
-    })
+    // a.sort();
+
+    let result = a.filter(number => number !== b[0]);
+
+    for (let i = 1; i < b.length; i++) {
+      result = result.filter(number => number !== b[i]);
+    }
+
+    return result;
   }
 }
 
 console.log(array_diff([], [4, 5]))
 console.log(array_diff([1, 8, 2], []))
-console.log(array_diff([3, 4], [3]))
-console.log(array_diff([1, 1, 2, 3, 4, 4], [4]))
+console.log(array_diff([4, 3], [3]))
+console.log(array_diff([1, 1, 4, 3, 4, 4], [4, 3]))
+console.log(array_diff([5, 6, 3, 2, 8, 9, 5, 6, 7, 1, 2, 1], [5, 6, 7]))
+console.log(array_diff([5, 6, 3, 2, 8, 9, 5, 6, 7, 1, 2, 1], [1, 2]))
