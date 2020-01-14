@@ -20,15 +20,24 @@ function listSquared(m, n) {
 
 }
 
-function test(n) {
-  let result = [];
+function findDivisor(n) {
+  let divisors = [];
 
-  for (let i = n; i < 1; i--) {
-    console.log(result.push(i));
-    result.push(i);
+  // Check for divisors
+  for (let i = 0; i < n + 1; i++) {
+    if (n % i === 0) {
+      divisors.push(i * i)
+    }
   }
 
-  return result;
+  // Add divisors
+  let a = divisors.reduce((accumulator, currentValue) => accumulator + currentValue)
+
+  console.log(divisors)
+  console.log(a)
+
+  // Check whether the added divisor
+  return (Math.sqrt(a) % 1 === 0 ? true : false)
 }
 
-console.log(test(5));
+console.log(findDivisor(1));
