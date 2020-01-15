@@ -17,11 +17,19 @@ listSquared(250, 500) --> [[287, 84100]]
 
 function listSquared(m, n) {
   // your code
+  let divisors = [];
+
+  // Check for divisors
+  for (let i = m; i < n + 1; i++) {
+    if ()
+  }
+
 
 }
 
 function findDivisor(n) {
   let divisors = [];
+  let result = [];
 
   // Check for divisors
   for (let i = 0; i < n + 1; i++) {
@@ -35,9 +43,18 @@ function findDivisor(n) {
 
   console.log(divisors)
   console.log(a)
+  console.log(n)
 
-  // Check whether the added divisor
-  return (Math.sqrt(a) % 1 === 0 ? true : false)
+  // Check square root of the added divisor
+  // return (Math.sqrt(a) % 1 === 0 ? true : false)
+
+  if (Math.sqrt(a) % 1 === 0) {
+    result.push([n, a])
+
+    return result
+  } else {
+    return false;
+  }
 }
 
-console.log(findDivisor(1));
+console.log(findDivisor(287));
