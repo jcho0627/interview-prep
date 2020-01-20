@@ -17,29 +17,32 @@ listSquared(250, 500) --> [[287, 84100]]
 
 function listSquared(m, n) {
   // your code
-  let checkNumbers = []
+  let recursion = [];
   let divisorsM = [];
   let divisorsN = [];
 
-  // Check which numbers to check
   for (let k = m; k < n + 1; k++) {
-    checkNumbers.push(k);
+    for (let z = 0; z < n + 1; z++) {
+      if (k % z === 0) {
+        recursion.push(z);
+      }
+    }
   }
 
   // Check for divisors
   for (let i = 0; i < m + 1; i++) {
     if (m % i === 0) {
-      divisorsM.push(i * i);
+      divisorsM.push(i);
     }
   }
 
   for (let j = 0; j < n + 1; j++) {
     if (n % j === 0) {
-      divisorsN.push(j * j);
+      divisorsN.push(j);
     }
   }
 
-  console.log(checkNumbers);
+  console.log(recursion)
   console.log(divisorsM);
   console.log(divisorsN);
 }
@@ -74,4 +77,4 @@ function listSquared(m, n) {
 //   }
 // }
 
-console.log(listSquared(1, 42));
+console.log(listSquared(12, 42));
