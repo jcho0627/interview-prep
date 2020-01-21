@@ -21,7 +21,7 @@ function listSquared(m, n) {
   let divisorsM = [];
   let divisorsN = [];
 
-  for (let k = m; k < n + 1; k++) {
+  for (let k = m; k < n; k++) {
     for (let z = 0; z < n + 1; z++) {
       if (k % z === 0) {
         recursion.push(z);
@@ -77,4 +77,4 @@ function listSquared(m, n) {
 //   }
 // }
 
-console.log(listSquared(12, 42));
+console.log(listSquared(1, 4));
